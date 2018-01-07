@@ -11,15 +11,17 @@ function distanceFromHqInFeet(location){
   return (distanceFromHqInBlocks(location)) * 264
 }
 
-function distanceTravelledInFeet(start, end){
-  if (start > end) {
-  return  (start - end) * 264
+function distanceTravelledInFeet(start, destination){
+  if (start > destination) {
+  return  (start - destination) * 264
   }
   else {
-  return (end - start) * 264
+  return (destination - start) * 264
   }
 }
 
 function calculatesFarePrice(start, destination){
-
+  if (distanceTravelledInFeet(start, destination) >= 2500) {
+    return 'cannot travel that far'
+  }
 }
